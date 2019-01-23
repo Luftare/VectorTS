@@ -29,6 +29,10 @@ export default class Vector {
     return this;
   }
 
+  clone(): Vector {
+    return new Vector(this.getX(), this.getY());
+  }
+
   getAngle(): number {
     return Math.atan2(this.y, this.x);
   }

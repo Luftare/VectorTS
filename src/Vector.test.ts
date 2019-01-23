@@ -13,6 +13,14 @@ describe('Vector', () => {
     expect(vector.toString()).toBe('0,0');
   });
 
+  it('can clone itself', () => {
+    const vector = new Vector(5, 9);
+
+    const clone = vector.clone();
+
+    expect(clone.toString()).toBe('5,9');
+  });
+
   it('has getters for cartesian coordinates', () => {
     const vector = new Vector(5, 21);
 
@@ -27,7 +35,7 @@ describe('Vector', () => {
     expect(vector.getRadius()).toBe(13);
   });
 
-  it('can add another vector', () => {
+  it('can add a vector', () => {
     const a = new Vector(5, 5);
     const b = new Vector(5, 5);
 
@@ -46,12 +54,22 @@ describe('Vector', () => {
     expect(a.toString()).toBe('12,11');
   });
 
-  it('can subtract vectors', () => {
+  it('can subtract a vector', () => {
     const a = new Vector(5, 5);
     const b = new Vector(3, 2);
 
     a.subtract(b);
 
     expect(a.toString()).toBe('2,3');
+  });
+
+  it('can subtract multiple vectors', () => {
+    const a = new Vector(5, 5);
+    const b = new Vector(5, 5);
+    const c = new Vector(2, 1);
+
+    a.subtract(b, c);
+
+    expect(a.toString()).toBe('-2,-1');
   });
 });
