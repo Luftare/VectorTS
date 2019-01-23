@@ -44,4 +44,12 @@ export default class Vector {
       return sum;
     }, this);
   }
+
+  subtract(...vectors: Vector[]): Vector {
+    return vectors.reduce((sum, vector) => {
+      sum.addX(-vector.getX());
+      sum.addY(-vector.getY());
+      return sum;
+    }, this);
+  }
 }

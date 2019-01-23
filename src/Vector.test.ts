@@ -45,4 +45,13 @@ describe('Vector', () => {
 
     expect(a.toString()).toBe('12,11');
   });
+
+  it('can subtract vectors', () => {
+    const a = new Vector(5, 5);
+    const b = new Vector(3, 2);
+
+    a.subtract(b);
+
+    expect(a.toString()).toBe('2,3');
+  });
 });
